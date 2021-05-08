@@ -1,10 +1,11 @@
 version: '3'
 services:
   reverseproxy:   
-    image: nginx
-    volumes:                     
-      - ./nginx-conf.d:/etc/nginx/conf.d
+     image: nginx
      container_name: reverseproxy
+     volumes:                     
+       - ./nginx-conf.d:/etc/nginx/conf.d
+      
 networks:
   default:
     external:
