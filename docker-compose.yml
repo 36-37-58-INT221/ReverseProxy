@@ -1,1 +1,10 @@
-test
+version: '3'
+services:
+  reverseproxy:   
+    image: nginx
+    volumes:                     
+      - ./ngix-conf.d:/etc/nginx/conf.d
+networks:
+  default:
+    external:
+      name: docker_network
