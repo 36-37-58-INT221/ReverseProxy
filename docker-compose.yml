@@ -1,12 +1,13 @@
 version: '3'
 services:
-  reverseproxy:   
-     image: nginx
-     container_name: reverseproxy
-     volumes:                     
-       - ./nginx-conf.d:/etc/nginx/conf.d
-      
+ reverseproxy:
+    container_name: reverseproxy
+    image: nginx
+    volumes:
+         - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+         - "80:80"
 networks:
-  default:
-    external:
-      name: docker_network
+    default:
+       external:
+          name: docker_network
